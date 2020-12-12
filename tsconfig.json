@@ -1,0 +1,31 @@
+{
+   "compilerOptions": {
+      "module": "CommonJS",
+
+      // Highest standard supported by most modern browsers
+      "target": "ES6",
+
+      "jsx": "preserve",
+
+      // Project specific directories
+      "rootDir": "src",
+      "outDir": "dist",
+
+      // Generate sourcemap files for debugging
+      "sourceMap": true,
+
+      // TypeScript doesn't support importing JSON modules, but this is common practice in node projects.
+      "resolveJsonModule": true,
+
+      // Type definitions
+      "lib": ["ES6", "dom"],
+
+      // Everything "Recommended: True" by https://www.typescriptlang.org/tsconfig
+      "strict": true,
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "skipLibCheck": true
+   },
+   "include": ["src/**/*.ts*"],
+   "exclude": ["node_modules", "src/**/*.spec.ts*"]
+}

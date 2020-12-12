@@ -1,0 +1,2 @@
+All code not covered by another license
+belongs in the Public Domain.
