@@ -1,37 +1,23 @@
-import express, { Request, Response } from "express";
-import type { IncomingHttpHeaders } from "http";
-import type { ParamsDictionary } from "express-serve-static-core";
-import type { ParsedQs } from "qs";
+import express from "express";
+import DB from "./Common/Database";
+import SetupDB from "./SetupDB";
+import StockEndpoint from "./Endpoints/Stock/StockEndpoint";
+import StockAttributeEndpoint from "./Endpoints/StockAttribute/StockAttributeEndpoint";
+import ObservationEndpoint from "./Endpoints/Observation/ObservationEndpoint";
+import ObservationAttributeEndpoint from "./Endpoints/ObservationAttribute/ObservationAttributeEndpoint";
+import UnitTypeEndpoint from "./Endpoints/UnitType/UnitTypeEndpoint";
+
+SetupDB(DB);
 
 const app = express();
 const port = 4000;
 
-interface RequestInfo {
-   request: string;
-   uri: string;
-   query?: ParsedQs;
-   parameters?: ParamsDictionary;
-   headers: IncomingHttpHeaders;
-   body?: any;
-}
-
-const getRequestInfo = (req: Request): RequestInfo => {
-   return {
-      request: req.method,
-      uri: req.url,
-      query: req.query,
-      parameters: req.params,
-      headers: req.headers,
-      body: req.body,
-   };
-};
-
-app.get("/", (req: Request, res: Response) => {
-   console.info(getRequestInfo(req));
-
-   res.send("Hello, World!");
-});
-
 app.listen(port, () => {
    console.info(`Server listening on ${port}`);
 });
+
+new StockEndpoint().route(app, "stock");
+new StockAttributeEndpoint().route(app, "stockAttribute");
+new ObservationEndpoint().route(app, "observation");
+new ObservationAttributeEndpoint().route(app, "observationAttribute");
+new UnitTypeEndpoint().route(app, "unitType");
