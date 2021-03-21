@@ -1,3 +1,3 @@
-# Typescript Backend Starter
+# Stock Market REST Server
 
-Starter project for TS and Express.
+A REST server for handling stock market data.
