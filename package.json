@@ -14,7 +14,7 @@
       "test": "jest",
       "test-watch": "jest --watch",
       "dev": "npm run build && nodemon --watch 'src/**/*.ts' --exec \"npx ts-node\" src/js/index.ts",
-      "typescript": "npm run lint && npm run format && tsc --noEmit",
+      "typescript": "npm run lint && npm run format && tsc",
       "lint": "eslint src/**/*.{js,jsx,ts,tsx} --quiet --fix",
       "format": "prettier --write *.{js,jsx,ts,tsx,json} src/**/*.{js,jsx,ts,tsx,json,html,css}",
       "update-dependencies": "ncu -u"
