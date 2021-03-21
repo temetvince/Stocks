@@ -4,15 +4,6 @@ import StockGet from "./StockGet";
 import StockPut from "./StockPut";
 import StockRemove from "./StockRemove";
 
-//TODO:
-//Add env for password in database.ts
-//Do the rest of the endpoints
-//Deploy DB without installing
-//SQL injection protection
-//Allow bulk edits
-//Make edits atomic
-//Tests?
-
 class StockEndpoint {
    route(express: Express, endpoint: string) {
       //?symbol=
