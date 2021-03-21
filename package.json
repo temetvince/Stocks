@@ -1,6 +1,6 @@
 {
-   "name": "typescript-backend-template",
-   "description": "A template for new TypeScript and Express Node.js projects.",
+   "name": "stocks",
+   "description": "A REST server for stock market data.",
    "author": "Emmett Casey",
    "keywords": [
       ""
@@ -32,6 +32,7 @@
       "@types/uuid": "^8.3.0",
       "@typescript-eslint/eslint-plugin": "^4.9.1",
       "@typescript-eslint/parser": "^4.9.1",
+      "dotenv": "^8.2.0",
       "eslint": "^7.15.0",
       "eslint-config-prettier": "^7.0.0",
       "jest": "^26.6.3",

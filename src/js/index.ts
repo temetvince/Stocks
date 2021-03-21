@@ -1,3 +1,6 @@
+import { config } from "dotenv";
+config();
+
 import express from "express";
 import DB from "./Common/Database";
 import SetupDB from "./SetupDB";
